@@ -7,7 +7,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>HappyXml</RootNamespace>
     <AssemblyName>HappyXml</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,9 +30,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="yarhl">
-      <HintPath>..\..\AttackFridayMonsters\Programs\Yarhl\yarhl.Media\bin\Debug\yarhl.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -40,6 +37,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CryXml2Xml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Yarhl\yarhl\yarhl.csproj">
+      <Project>{47373F3F-6A6A-4B2A-B06E-971D9FBDB545}</Project>
+      <Name>yarhl</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
