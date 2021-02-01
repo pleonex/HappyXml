@@ -30,6 +30,7 @@ namespace HappyXml
     using System.IO;
     using System.Reflection;
     using Yarhl.FileFormat;
+    using Yarhl.IO;
 
     static class Program
     {
@@ -57,7 +58,7 @@ namespace HappyXml
 
         static void Export(string input, string output)
         {
-            BinaryFormat source = new BinaryFormat(input);
+            using var source = new BinaryFormat(DataStreamFactory.FromFile(input, FileOpenMode.Read));
             var converter = new CryXml2Xml();
             converter.Convert(source).Save(output);
         }
